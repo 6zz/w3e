@@ -33,11 +33,13 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         var msg = PFObject(className:"Message")
         
         msg["text"] = msgTextField.text
+        msg["user"] = PFUser.currentUser()
         msg.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 // The object has been saved.
                 println("msg sent")
+                self.msgTextField.text = ""
             } else {
                 // There was a problem, check error.description
                 if let error = error {
@@ -63,6 +65,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         var query = PFQuery(className:"Message")
         var msgs = [ParseMsg]()
 //        query.whereKey("playerName", equalTo:"Sean Plott")
+        query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in
             
