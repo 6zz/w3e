@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1192B9C869A4856B43DE0DEE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84928EF532CD0B847E48B40 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		794743B21BA0EACA0029463D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 794743B11BA0EACA0029463D /* Podfile */; };
+		79A82FC01BA1055B009FCA88 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A82FBF1BA1055B009FCA88 /* ChatViewController.swift */; };
+		79A82FC31BA10873009FCA88 /* MsgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A82FC21BA10873009FCA88 /* MsgCell.swift */; };
+		79A82FC61BA1098C009FCA88 /* ParseMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A82FC51BA1098C009FCA88 /* ParseMsg.swift */; };
 		79C2E6B51BA0E9FC004F1139 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C2E6B41BA0E9FC004F1139 /* AppDelegate.swift */; };
 		79C2E6B71BA0E9FC004F1139 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C2E6B61BA0E9FC004F1139 /* LoginViewController.swift */; };
 		79C2E6BA1BA0E9FC004F1139 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79C2E6B81BA0E9FC004F1139 /* Main.storyboard */; };
@@ -31,6 +34,9 @@
 		094B9F56A84779811DD7ADE2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		310DC9FD162DF67C69DF9E75 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		794743B11BA0EACA0029463D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		79A82FBF1BA1055B009FCA88 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		79A82FC21BA10873009FCA88 /* MsgCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MsgCell.swift; sourceTree = "<group>"; };
+		79A82FC51BA1098C009FCA88 /* ParseMsg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseMsg.swift; sourceTree = "<group>"; };
 		79C2E6AF1BA0E9FC004F1139 /* chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79C2E6B31BA0E9FC004F1139 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79C2E6B41BA0E9FC004F1139 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,8 +81,25 @@
 			isa = PBXGroup;
 			children = (
 				79C2E6B61BA0E9FC004F1139 /* LoginViewController.swift */,
+				79A82FBF1BA1055B009FCA88 /* ChatViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		79A82FC11BA10841009FCA88 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				79A82FC21BA10873009FCA88 /* MsgCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		79A82FC41BA10977009FCA88 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				79A82FC51BA1098C009FCA88 /* ParseMsg.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		79C2E6A61BA0E9FC004F1139 = {
@@ -103,6 +126,8 @@
 		79C2E6B11BA0E9FC004F1139 /* chat */ = {
 			isa = PBXGroup;
 			children = (
+				79A82FC41BA10977009FCA88 /* Models */,
+				79A82FC11BA10841009FCA88 /* Views */,
 				790C994C1BA0EC08005E2B3B /* View Controllers */,
 				79C2E6B41BA0E9FC004F1139 /* AppDelegate.swift */,
 				79C2E6B81BA0E9FC004F1139 /* Main.storyboard */,
@@ -299,8 +324,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79A82FC61BA1098C009FCA88 /* ParseMsg.swift in Sources */,
 				79C2E6B71BA0E9FC004F1139 /* LoginViewController.swift in Sources */,
+				79A82FC01BA1055B009FCA88 /* ChatViewController.swift in Sources */,
 				79C2E6B51BA0E9FC004F1139 /* AppDelegate.swift in Sources */,
+				79A82FC31BA10873009FCA88 /* MsgCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
