@@ -18,7 +18,8 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        refresh()
+        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "refresh", userInfo: nil, repeats: true)
+
 
         // Do any additional setup after loading the view.
     }
@@ -53,12 +54,15 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("MsgCell", forIndexPath: indexPath) as! MsgCell
         
+        cell.msg = msgs[indexPath.row]
+        
         return cell
     }
     
-    private func refresh() {
+    func refresh() {
         var query = PFQuery(className:"Message")
-        query.whereKey("playerName", equalTo:"Sean Plott")
+        var msgs = [ParseMsg]()
+//        query.whereKey("playerName", equalTo:"Sean Plott")
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in
             
@@ -68,9 +72,11 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 // Do something with the found objects
                 if let objects = objects as? [PFObject] {
                     for object in objects {
-                        println(object.objectId)
+                        msgs.append(ParseMsg(obj: object))
                     }
                 }
+                self.msgs = msgs
+                self.tableView.reloadData()
             } else {
                 // Log details of the failure
                 println("Error: \(error!) \(error!.userInfo!)")

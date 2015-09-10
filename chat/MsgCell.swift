@@ -9,6 +9,13 @@
 import UIKit
 
 class MsgCell: UITableViewCell {
+    @IBOutlet weak var msgLabel: UILabel!
+    
+    var msg : ParseMsg! {
+        didSet {
+            msgLabel.text = msg.text
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

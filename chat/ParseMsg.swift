@@ -7,7 +7,13 @@
 //
 
 import Foundation
+import Parse
 
 class ParseMsg {
+    var text : String?
+    var user : String?
     
+    init(obj: PFObject) {
+        text = obj["text"] as? String
+    }
 }
