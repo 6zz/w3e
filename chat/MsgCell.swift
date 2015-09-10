@@ -10,10 +10,12 @@ import UIKit
 
 class MsgCell: UITableViewCell {
     @IBOutlet weak var msgLabel: UILabel!
+    @IBOutlet weak var userLabel: UILabel!
     
     var msg : ParseMsg! {
         didSet {
             msgLabel.text = msg.text
+            userLabel.text = msg.user
         }
     }
 

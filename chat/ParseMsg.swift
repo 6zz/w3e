@@ -14,6 +14,8 @@ class ParseMsg {
     var user : String?
     
     init(obj: PFObject) {
-        text = obj["text"] as? String
+        var user = obj["user"] as? PFUser
+        text = obj["text"] as? String ?? ""
+        self.user = user?.username ?? ""
     }
 }

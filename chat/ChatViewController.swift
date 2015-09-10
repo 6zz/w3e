@@ -17,7 +17,8 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120
         NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "refresh", userInfo: nil, repeats: true)
 
 
@@ -66,12 +67,12 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         var msgs = [ParseMsg]()
 //        query.whereKey("playerName", equalTo:"Sean Plott")
         query.orderByDescending("createdAt")
+        query.includeKey("user")
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in
             
             if error == nil {
                 // The find succeeded.
-                println("Successfully retrieved \(objects!.count) msgs.")
                 // Do something with the found objects
                 if let objects = objects as? [PFObject] {
                     for object in objects {

@@ -94,13 +94,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2RV-Vf-FAX">
-                                <rect key="frame" x="16" y="39" width="288" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2RV-Vf-FAX">
+                                <rect key="frame" x="8" y="28" width="304" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDj-H9-JZr">
-                                <rect key="frame" x="133" y="91" width="36" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDj-H9-JZr">
+                                <rect key="frame" x="142" y="66" width="36" height="30"/>
                                 <state key="normal" title="Send">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -108,26 +108,42 @@
                                     <action selector="j:" destination="f6r-VV-dqW" eventType="touchUpInside" id="tGw-7t-QZ0"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8dH-ZL-iHl">
-                                <rect key="frame" x="-11" y="141" width="331" height="412"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="113" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8dH-ZL-iHl">
+                                <rect key="frame" x="0.0" y="96" width="320" height="472"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MsgCell" id="IGS-pX-5d2" customClass="MsgCell" customModule="chat" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MsgCell" rowHeight="113" id="IGS-pX-5d2" customClass="MsgCell" customModule="chat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="331" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IGS-pX-5d2" id="MgP-2O-QuL">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="this is a msg" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubg-Ra-HYd">
-                                                    <rect key="frame" x="19" y="11" width="304" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="this is a msg" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubg-Ra-HYd">
+                                                    <rect key="frame" x="15" y="31" width="295" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-rN-6Ts">
+                                                    <rect key="frame" x="8" y="8" width="302" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.021608253220000002" green="0.67796920620000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ubg-Ra-HYd" firstAttribute="leading" secondItem="MgP-2O-QuL" secondAttribute="leading" constant="15" id="EGq-00-nCx"/>
+                                                <constraint firstItem="e7j-rN-6Ts" firstAttribute="top" secondItem="MgP-2O-QuL" secondAttribute="top" constant="8" id="ZM4-Yl-nXC"/>
+                                                <constraint firstAttribute="trailing" secondItem="e7j-rN-6Ts" secondAttribute="trailing" constant="10" id="f1n-8x-hL7"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ubg-Ra-HYd" secondAttribute="bottom" constant="8" id="ibV-jC-J2x"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ubg-Ra-HYd" secondAttribute="trailing" constant="10" id="j7R-3r-q3s"/>
+                                                <constraint firstItem="Ubg-Ra-HYd" firstAttribute="top" secondItem="e7j-rN-6Ts" secondAttribute="bottom" constant="7" id="rWa-LG-5vB"/>
+                                                <constraint firstItem="e7j-rN-6Ts" firstAttribute="leading" secondItem="MgP-2O-QuL" secondAttribute="leading" constant="8" id="x6k-Eu-iz5"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="msgLabel" destination="Ubg-Ra-HYd" id="1yV-F1-0VF"/>
+                                            <outlet property="userLabel" destination="e7j-rN-6Ts" id="0Dj-Oz-JId"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -138,6 +154,17 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2RV-Vf-FAX" secondAttribute="trailing" constant="8" id="0Zd-7O-yGa"/>
+                            <constraint firstItem="8dH-ZL-iHl" firstAttribute="leading" secondItem="Cwr-A9-EjQ" secondAttribute="leading" id="A2m-BO-OHj"/>
+                            <constraint firstItem="2RV-Vf-FAX" firstAttribute="leading" secondItem="Cwr-A9-EjQ" secondAttribute="leading" constant="8" id="Adx-lv-1mL"/>
+                            <constraint firstItem="BlS-my-HNJ" firstAttribute="top" secondItem="8dH-ZL-iHl" secondAttribute="bottom" id="Jew-go-p14"/>
+                            <constraint firstItem="8dH-ZL-iHl" firstAttribute="top" secondItem="xDj-H9-JZr" secondAttribute="bottom" id="Opp-Wl-WVS"/>
+                            <constraint firstAttribute="centerX" secondItem="xDj-H9-JZr" secondAttribute="centerX" id="bUK-tx-hDR"/>
+                            <constraint firstAttribute="trailing" secondItem="8dH-ZL-iHl" secondAttribute="trailing" id="gXz-OI-zLn"/>
+                            <constraint firstItem="2RV-Vf-FAX" firstAttribute="top" secondItem="qHY-wY-g4u" secondAttribute="bottom" constant="8" id="mfm-aX-yL4"/>
+                            <constraint firstItem="xDj-H9-JZr" firstAttribute="top" secondItem="2RV-Vf-FAX" secondAttribute="bottom" constant="8" id="otV-Dk-0j2"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="msgTextField" destination="2RV-Vf-FAX" id="keY-RJ-N6q"/>
